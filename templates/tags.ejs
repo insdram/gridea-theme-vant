@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+
+<body>
+	<div class="layout">
+		<%- include('./includes/header') %>
+		<%- include('./includes/menu') %>
+
+		<div class="layout-content">
+			<div class="layout-content-main">
+				<div class="container">
+					<div class="row justify-content-lg-center">
+						<div class="col-12 col-lg-9">
+							<div class="layout-tags row">
+								<% tags.forEach((tag, index) => { %>
+								<div class="col-6 mb-3">
+									<div class="card">
+										<div class="card-header">
+											<div class="header-content">
+												<div class="title"><%= tag.name %></div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="card-item">
+												<div class="list-content">
+													<div class="list-body">
+														<div class="title" href=""><span> <%= tag.count %> </span> 篇文章</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<% }); %>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<%- include('./includes/footer') %>
+	</div>
+</body>
+
+</html>

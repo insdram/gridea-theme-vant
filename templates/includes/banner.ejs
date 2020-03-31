@@ -1,0 +1,47 @@
+<div class="layout-banner">
+  <div class="layout-banner-main">
+    <div class="container">
+      <div class="row justify-content-lg-center">
+        <div class="col-12 col-lg-9">
+          <div class="banner">
+            <div class="banner-list row">
+              <div class="item col-12 col-sm-9">
+                <% posts.forEach(function(post,index) { %>
+                <% if (index == 0 ) { %>
+                <div class="banner-card main">
+                  <a class="card-content" href="<%= post.link %>" style="background-image: url('<%= post.feature %>')">
+                    <div class="mask"></div>
+                    <div class="title">
+                      <h3 class="card-title"><%= post.title %></h3>
+                    </div>
+                  </a>
+                </div>
+                <% return false } %>
+                <% }); %>
+              </div>
+              <div class="col-12 col-sm-3">
+                <div class="row">
+                  <% posts.forEach(function(post,index) { %>
+                  <% if (index >= 1 && index < 4) { %>
+                  <div class="item col-4 col-sm-12">
+                    <div class="banner-card">
+                      <a class="card-content" href="<%= post.link %>"
+                        style="background-image: url('<%= post.feature %>')">
+                        <div class="mask"></div>
+                        <div class="title">
+                          <h3 class="card-title"><%= post.title %></h3>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <% return false } %>
+                  <% }); %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

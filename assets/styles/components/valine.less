@@ -1,0 +1,632 @@
+.v {
+	text-align: left;
+	font-size: 16px;
+}
+
+.v * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #555;
+	line-height: 2;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.v hr {
+	margin: .825em 0;
+	border-color: #f6f6f6;
+	border-style: dashed;
+}
+
+.v.hide-avatar .vimg {
+	display: none;
+}
+
+.v a {
+	position: relative;
+	display: inline-block;
+	color: @main;
+	cursor: pointer;
+}
+
+.v a:before {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 1px;
+	background: @main;
+	content: "";
+	-webkit-transition: width .3s ease;
+	transition: width .3s ease;
+}
+
+.v a:hover {
+	color: @main;
+}
+
+.v a:hover:before {
+	right: auto;
+	left: 0;
+	width: 100%;
+}
+
+.v code,.v pre {
+	margin: 0;
+	padding: .2em .4em;
+	border-radius: 3px;
+	background-color: #e6f7ff;
+	color: #555;
+	font-size: 85%;
+}
+
+.v pre {
+	overflow: auto;
+	padding: 10px;
+	line-height: 1.45;
+}
+
+.v pre code {
+	padding: 0;
+	background: transparent;
+	white-space: pre-wrap;
+	word-break: keep-all;
+}
+
+.v blockquote {
+	margin: .5em 0;
+	padding: 0 0 0 1em;
+	border-left: 4px solid @main-border;
+	color: #666;
+}
+
+.v .vinput {
+	padding: 10px 5px;
+	max-width: 100%;
+	outline: none;
+	border: none;
+	font-size: .775em;
+	resize: none;
+	word-wrap: break-word;
+}
+
+.v input[type=checkbox],.v input[type=radio] {
+	display: inline-block;
+	margin-top: -2px;
+	vertical-align: middle;
+}
+
+.v .vwrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	border: 1px solid @main-border;
+}
+
+.v .vwrap input {
+	background: transparent;
+}
+
+.v .vwrap .vedit {
+	position: relative;
+	padding: 10px;
+}
+
+.v .vwrap .vedit .vctrl {
+	text-align: right;
+	font-size: 12px;
+}
+
+.v .vwrap .vedit .vctrl span {
+	display: inline-block;
+	padding: 10px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.v .vwrap .vedit .vemojis {
+	display: none;
+	overflow: auto;
+	max-height: 145px;
+	border: 1px solid @light-border;
+	text-align: justify;
+	font-size: 18px;
+}
+
+.v .vwrap .vedit .vemojis i {
+	display: inline-block;
+	padding: 7px 0;
+	width: 38px;
+	vertical-align: middle;
+	text-align: center;
+	font-style: normal;
+	cursor: pointer;
+}
+
+.v .vwrap .vedit .vpreview {
+	padding: 8px;
+	border: 1px solid @light-border;
+}
+
+.v .vwrap .vedit .vpreview frame,.v .vwrap .vedit .vpreview iframe,.v .vwrap .vedit .vpreview img {
+	max-width: 100%;
+	border: none;
+}
+
+.v .vwrap .vheader .vinput {
+	width: 33.33%;
+}
+
+.v .vwrap .vheader.item2 .vinput {
+	width: 50%;
+}
+
+.v .vwrap .vheader.item1 .vinput {
+	width: 100%;
+}
+
+.v .vwrap .vheader .vinput:focus {
+	border-bottom-color: @main;
+}
+
+@media screen and (max-width:520px) {
+	.v .vwrap .vheader.item2 .vinput,.v .vwrap .vheader .vinput {
+		width: 33.33%;
+	}
+}
+
+.v .vwrap .vcontrol {
+	background-color: #f7f7f7;
+	font-size: 0;
+}
+
+.v .vwrap .vcontrol .col {
+	display: inline-block;
+	color: #ccc;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.v .vwrap .vcontrol .col.text-right {
+	padding: 0;
+	text-align: right;
+}
+
+.v .vwrap .vcontrol .col svg {
+	overflow: hidden;
+	margin-right: 2px;
+	vertical-align: middle;
+	fill: currentColor;
+}
+
+.v .vwrap .vcontrol .col.col-20 {
+	width: 20%;
+}
+
+.v .vwrap .vcontrol .col.col-40 {
+	width: 40%;
+}
+
+.v .vwrap .vcontrol .col.col-60 {
+	width: 60%;
+}
+
+.v .vwrap .vcontrol .col.col-80 {
+	width: 80%;
+}
+
+.v .vwrap .vcontrol .col.split {
+	width: 50%;
+}
+
+.v .vwrap .vmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: @main-black;
+}
+
+.v .vwrap .vmark .valert {
+	padding-top: 3em;
+}
+
+.v .vwrap .vmark .valert .vtext {
+	padding: 1em 0;
+	color: @white;
+}
+
+.v .vwrap .vmark .valert .vcode {
+	padding: .5em;
+	width: 4.6875em;
+	border-radius: .3125em;
+	background: #dedede;
+}
+
+.v .vwrap .vmark .valert .vcode:focus {
+	border-color: @light;
+	background-color: @white;
+}
+
+@media screen and (max-width:720px) {
+	.v .vwrap .vmark .valert {
+		padding-top: 5.5em;
+	}
+
+	.v .vwrap .vmark .valert .vtext {
+		padding: 1em 0;
+		color: @white;
+	}
+}
+
+.v .power {
+	padding: .5em 0;
+	color: #999;
+}
+
+.v .power,.v .power a {
+	font-size: .75em;
+}
+
+.v .vinfo {
+	padding: 5px;
+	font-size: 0;
+}
+
+.v .vinfo .col {
+	display: inline-block;
+	padding-top: 1.5em;
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 16px;
+}
+
+.v .vinfo .vcount .vnum {
+	font-weight: 600;
+	font-size: 1.25em;
+}
+
+.v a {
+	color: #555;
+	text-decoration: none;
+}
+
+.v a:hover {
+	color: #222;
+}
+
+.v ol,.v ul {
+	margin-left: 1.25em;
+	padding: 0;
+}
+
+.v .txt-center {
+	text-align: center;
+}
+
+.v .txt-right {
+	text-align: right;
+}
+
+.v .pd5 {
+	padding: 5px;
+}
+
+.v .pd10 {
+	padding: 10px;
+}
+
+.v .veditor {
+	display: block;
+	width: 100%;
+	min-height: 48px;
+	height: 48px;
+	background: transparent;
+	font-size: .875em;
+	resize: none;
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
+}
+
+.v .vbtn {
+	display: inline-block;
+	margin: 0 -1px -1px 0;
+	padding: .5em 1.25em;
+	width: 100%;
+	outline: none;
+	border: 1px solid @main;
+	background: @main;
+	color: @white;
+	vertical-align: middle;
+	text-align: center;
+	white-space: nowrap;
+	font-weight: 400;
+	font-size: .875em;
+	line-height: 2em;
+	cursor: pointer;
+	-webkit-transition-duration: .4s;
+	transition-duration: .4s;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.v .vbtn+.vbtn {
+	margin-left: 1.25em;
+}
+
+.v .vbtn:active,.v .vbtn:hover {
+	border-color: @light;
+	background-color: @light;
+	color: @white;
+}
+
+.v .vempty {
+	padding: 1.25em 0;
+	color: #999;
+	text-align: center;
+}
+
+.v .info {
+	display: none;
+}
+
+.v .vlist {
+	width: 100%;
+}
+
+.v .vlist .vcard {
+	position: relative;
+	display: block;
+	padding-top: 1.5em;
+}
+
+.v .vlist .vcard:after {
+	clear: both;
+	display: block;
+	content: "";
+}
+
+.v .vlist .vcard .vimg {
+	float: left;
+	margin-right: .7525em;
+	padding: 0;
+	width: 3em;
+	height: 3em;
+	border: 1px solid #f5f5f5;
+	border-radius: 50%;
+}
+
+@media screen and (max-width:720px) {
+	.v .vlist .vcard .vimg {
+		width: 2.5em;
+		height: 2.5em;
+	}
+}
+
+.v .vlist .vcard .vhead {
+	margin-top: 0;
+	line-height: 1.5;
+}
+
+.v .vlist .vcard .vhead .vnick {
+	position: relative;
+	display: inline-block;
+	margin-right: .875em;
+	color: @main;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: .875em;
+	cursor: pointer;
+}
+
+.v .vlist .vcard .vhead .vnick:before {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 1px;
+	background: @light;
+	content: "";
+	-webkit-transition: width .3s ease;
+	transition: width .3s ease;
+}
+
+.v .vlist .vcard .vhead .vnick:hover {
+	color: @light;
+}
+
+.v .vlist .vcard .vhead .vnick:hover:before {
+	right: auto;
+	left: 0;
+	width: 100%;
+}
+
+.v .vlist .vcard .vhead .vsys {
+	display: none;
+	margin-right: .3em;
+	padding: .2em .5em;
+	border-radius: .2em;
+	background: #ededed;
+	color: #b3b1b1;
+	font-size: .75em;
+}
+
+@media screen and (max-width:520px) {
+	.v .vlist .vcard .vhead .vsys {
+		display: none;
+	}
+}
+
+.v .vlist .vcard .vh {
+	overflow: hidden;
+	padding-bottom: .5em;
+	border-bottom: 1px dashed @light-border;
+}
+
+.v .vlist .vcard .vh .vtime {
+	margin-right: .875em;
+	color: #b3b3b3;
+	font-size: .75em;
+}
+
+.v .vlist .vcard .vh .vmeta {
+	position: relative;
+	line-height: 1;
+}
+
+.v .vlist .vcard .vh .vmeta .vat {
+	float: right;
+	color: @main;
+	font-size: .8125em;
+	cursor: pointer;
+}
+
+.v .vlist .vcard .vh .vmeta .vat:hover {
+	color: @light;
+}
+
+.v .vlist .vcard:last-child .vh {
+	border-bottom: none;
+}
+
+.v .vlist .vcard .vcontent {
+	position: relative;
+	margin-bottom: .75em;
+	padding-top: .625em;
+	color: #4a4a4a;
+	text-align: justify;
+	word-wrap: break-word;
+	font-size: .875em;
+	line-height: 2;
+	word-break: break-all;
+}
+
+.v .vlist .vcard .vcontent frame,.v .vlist .vcard .vcontent iframe,.v .vlist .vcard .vcontent img {
+	max-width: 100%;
+	border: none;
+}
+
+.v .vlist .vcard .vcontent.expand {
+	overflow: hidden;
+	max-height: 11.25em;
+	cursor: pointer;
+}
+
+.v .vlist .vcard .vcontent.expand:before {
+	position: absolute;
+	top: 0;
+	bottom: 3.15em;
+	left: 0;
+	display: block;
+	width: 100%;
+	background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),to(hsla(0,0%,100%,.9)));
+	background: linear-gradient(180deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.9));
+	content: "";
+	pointer-events: none;
+}
+
+.v .vlist .vcard .vcontent.expand:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 3.15em;
+	background: hsla(0,0%,100%,.9);
+	color: #828586;
+	content: "显示全部";
+	text-align: center;
+	line-height: 3.15em;
+	pointer-events: none;
+}
+
+.v .vlist .vcard .vquote {
+	margin-top: 1em;
+	padding-left: 1em;
+	border-left: 1px dashed @light-border;
+	color: #666;
+}
+
+.v .vlist .vcard .vquote .vimg {
+	width: 2.225em;
+	height: 2.225em;
+}
+
+.v .vpage .vmore {
+	margin: 1em 0;
+}
+
+.v .clear {
+	clear: both;
+	display: block;
+	content: "";
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn);
+	}
+}
+
+@-webkit-keyframes pulse {
+	50% {
+		background: #dcdcdc;
+	}
+}
+
+@keyframes pulse {
+	50% {
+		background: #dcdcdc;
+	}
+}
+
+.v .vloading {
+	position: relative;
+	display: block;
+	padding: 20px;
+	height: 80px;
+}
+
+.v .vloading:before {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	border: 6px double #a0a0a0;
+	border-radius: 50%;
+	content: "";
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	-webkit-animation: spin 1s infinite linear;
+	animation: spin 1s infinite linear;
+}

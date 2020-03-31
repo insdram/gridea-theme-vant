@@ -1,0 +1,105 @@
+.layout-banner {
+  position: relative;
+  margin: 2rem 0 0;
+  @media (min-width: 576px) {
+    margin: 3rem 0 0;
+  }
+
+  .layout-banner-main {
+    .banner {
+      .item {
+        position: relative;
+        margin-bottom: 1rem;
+
+        .banner-card {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          padding: 0;
+          border-radius: 4px;
+
+          &:after {
+            content: '';
+            display: block;
+            padding-bottom: 50%;
+          }
+
+          &.main:after {
+            content: '';
+            display: block;
+            padding-bottom: calc(50% + 1rem);
+          }
+
+          .card-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 0;
+            border-radius: inherit;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: @main-bg;
+
+            &:hover {
+              .mask {
+                opacity: 1;
+              }
+
+              .title {
+                h3 {
+                  opacity: 1;
+                  transition: transform .4s ease;
+                  transform: translate3d(0, 0, 0);
+                }
+              }
+            }
+
+            .mask {
+              content: '';
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              background-color: rgba(37, 99, 252, .85);
+              position: absolute;
+              transition: transform 0.4s cubic-bezier(0.51, 0.01, 0.18, 1.03), opacity 0.3s ease;
+              opacity: 0;
+            }
+
+            .title {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              display: flex;
+              overflow: hidden;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+
+              h3 {
+                overflow: hidden;
+                margin: 0;
+                width: 90%;
+                color: @white;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                opacity: 0;
+                transition: transform .4s ease;
+                transform: translate3d(0, 100%, 0);
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}

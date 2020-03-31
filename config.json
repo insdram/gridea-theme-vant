@@ -1,0 +1,121 @@
+{
+  "name": "Vant",
+  "version": "1.0.0",
+  "author": "nuoea",
+  "repository": "https://github.com/insdram/gridea-theme-vant",
+  "customConfig": [{
+      "name": "copy",
+      "label": "开始时间",
+      "group": "首页",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "icp",
+      "label": "备案号码",
+      "group": "首页",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "baidu",
+      "label": "跟踪 ID",
+      "group": "百度统计",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "valineID",
+      "label": "appId",
+      "group": "valine",
+      "value": "",
+      "type": "input",
+      "note": "请输入appId"
+    },
+    {
+      "name": "valineKey",
+      "label": "appKey",
+      "group": "valine",
+      "value": "",
+      "type": "input",
+      "note": "请输入appKey"
+    },
+    {
+      "name": "rss",
+      "label": "RSS",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "twitter",
+      "label": "Twitter",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "github",
+      "label": "Github",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "telegram",
+      "label": "telegram",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "douban",
+      "label": "豆瓣",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "instagram",
+      "label": "Instagram",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "qq",
+      "label": "QQ",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "weibo",
+      "label": "微博",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "weixin",
+      "label": "微信",
+      "group": "社交",
+      "value": "",
+      "type": "input"
+    },
+    {
+      "name": "links",
+      "label": "友链",
+      "group": "友链",
+      "type": "array",
+      "value": [],
+      "arrayItems": [
+        { "label": "名称", "name": "siteName", "type": "input", "value": "" },
+        { "label": "链接", "name": "siteLink", "type": "input", "value": "" },
+        { "label": "Logo", "name": "siteLogo", "type": "picture-upload", "value": "" },
+        { "label": "描述", "name": "description", "type": "textarea", "value": "" }
+      ],
+      "note": ""
+    }
+  ]
+}

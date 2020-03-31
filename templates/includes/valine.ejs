@@ -1,0 +1,17 @@
+<script type="text/javascript" src='<%= themeConfig.domain %>/media/scripts/zan.js'></script>
+<script type="text/javascript" src='<%= themeConfig.domain %>/media/scripts/av-min.js'></script>
+<script type="text/javascript" src='<%= themeConfig.domain %>/media/scripts/Valine.min.js'></script>
+
+<script>
+  var valine = new Valine();
+  valine.init({
+    el: '.layout-comments',
+    appId: '<%= site.customConfig.valineID %>',
+    appKey: '<%= site.customConfig.valineKey %>',
+    notify: false,
+    verify: false,
+    visitor: true,
+    avatar: 'mp',
+    placeholder: '加入讨论...'
+  })
+</script>

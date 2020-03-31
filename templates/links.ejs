@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+
+<body>
+	<div class="layout">
+		<%- include('./includes/header') %>
+		<%- include('./includes/menu') %>
+
+		<div class="layout-content">
+			<div class="layout-content-main">
+				<div class="container">
+					<div class="row justify-content-lg-center">
+						<div class="col-12 col-lg-9">
+							<div class="layout-archive">
+
+
+								<div class="card">
+									<div class="card-header">
+										<div class="header-content">
+											<div class="title">友情链接</div>
+										</div>
+
+									</div>
+									<div class="card-body">
+										<% if (site.customConfig.links) { %>
+										<% site.customConfig.links.forEach(function(links) { %>
+										<div class="card-item">
+											<div class="thumb">
+												<% if (links.siteLogo) { %>
+												<a href="<%= links.siteLink %>" style="background-image: url('<%= links.siteLogo %>')"></a>
+												<% } else {%>
+												<a href="<%= links.siteLink %>"
+													style="background-image: url('<%= themeConfig.domain %>/images/visitor.png')"></a>
+												<% } %>
+											</div>
+											<div class="list-content">
+												<div class="list-body">
+													<a class="title" href="<%= links.siteLink %>"><%= links.siteName %></a>
+													<div class="time"><%= links.description %></div>
+												</div>
+											</div>
+										</div>
+										<% }); %>
+										<% } %>
+									</div>
+								</div>
+
+							</div>
+
+							
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<%- include('./includes/footer') %>
+	</div>
+</body>
+
+</html>

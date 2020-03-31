@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+
+<body>
+	<div class="layout">
+		<%- include('./includes/header') %>
+		<%- include('./includes/menu') %>
+
+		<div class="layout-content">
+			<div class="layout-content-main">
+				<div class="container">
+					<div class="row justify-content-lg-center">
+						<div class="col-12 col-lg-9">
+							<div class="layout-archive">
+								<% let years = []; posts.forEach((item) => { const year = item.date.substring(0, 4); if (!years.includes(year)) { years.push(year); } }); %>
+								<% years.forEach(function(year,index) { %>
+
+								<div class="card">
+									<div class="card-header">
+										<div class="header-content">
+											<div class="title"><%- year %></div>
+										</div>
+
+									</div>
+									<div class="card-body">
+										<% posts.forEach(function(post) { %>
+										<%if (post.date.indexOf(year) !== -1) { %>
+										<div class="card-item">
+											<div class="thumb">
+												<% if (themeConfig.showFeatureImage && post.feature) { %>
+												<a href="<%= post.link %>" style="background-image: url('<%= post.feature %>')"></a>
+												<% } else {%>
+												<a href="<%= post.link %>"
+													style="background-image: url('<%= themeConfig.domain %>/images/avatar.png')"></a>
+												<% } %>
+											</div>
+											<div class="list-content">
+												<div class="list-body">
+													<a class="title" href="<%= post.link %>"><%= post.title %></a>
+													<div class="time"><%= post.dateFormat %></div>
+												</div>
+											</div>
+										</div>
+										<% } %>
+										<% }); %>
+									</div>
+								</div>
+								<% }); %>
+							</div>
+
+							<div class="layout-paginator">
+								<div class="paginator row">
+									<div class="col-6">
+										<% if (pagination.prev) { %>
+										<a href="<%= pagination.prev %>" class="btn btn-paginator width-100">上一页</a>
+										<% } else { %>
+										<a class="btn disabled btn-paginator width-100">上一页</a>
+										<% } %>
+									</div>
+									<div class="col-6">
+										<% if (pagination.next) { %>
+										<a href="<%= pagination.next %>" class="btn btn-paginator width-100">下一页</a>
+										<% } else { %>
+										<a class="btn disabled btn-paginator width-100">下一页</a>
+										<% } %>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<%- include('./includes/footer') %>
+	</div>
+</body>
+
+</html>

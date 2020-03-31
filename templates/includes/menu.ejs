@@ -1,0 +1,10 @@
+<div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			<% menus.forEach(function (menu) { %>
+			<li class="layout-collapse-item"><a title="<%= menu.name %>" href="<%= menu.link %>"><%= menu.name %></a></li>
+			<% }); %>
+
+		</ul>
+	</div>
+</div>

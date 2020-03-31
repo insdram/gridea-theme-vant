@@ -1,0 +1,17 @@
+<% posts.forEach(function(post,index) { %>
+<% if (index == 0 ) { %>
+<div class="layout-nav" style="background-image: url('<%= post.feature %>')">
+  <div class="container">
+    <div class="row justify-content-lg-center">
+      <div class="col-12 col-lg-9">
+        <div class="nav-content">
+          <h1><%= tag.name %></h1>
+          <div class="sub-title"># 标签</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<% return false } %>
+<% }); %>

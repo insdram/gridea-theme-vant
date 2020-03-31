@@ -1,0 +1,122 @@
+<div class="layout-content">
+  <div class="layout-content-main">
+    <div class="container">
+      <div class="row justify-content-lg-center">
+        <div class="col-12 col-lg-9">
+          <div class="card-list">
+            <% posts.forEach(function(post) { %>
+            
+            <article class="card">
+              <div class="card-item row">
+                <% if (themeConfig.showFeatureImage && post.feature) { %>
+                <div class="card-content col-8 col-lg-9">
+                  <div class="card-body">
+                    <div class="header">
+                      <a class="title" href="<%= post.link %>">
+                        <h3><%= post.title %></h3>
+                      </a>
+                    </div>
+                    <div class="inner d-none d-sm-block">
+                      <div class="abstract">
+                        <%- post.abstract %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="item">
+                      <% post.tags.forEach(function(tag) { %>
+                      <a href="<%= tag.link %>" class="tag" data-title="<%= tag.name %>">
+                        <%= tag.name %>
+                      </a>
+                      <% }); %>
+                    </div>
+                    <div class="item"><%= post.dateFormat %></div>
+                  </div>
+                </div>
+                <div class="card-thumb col-4 col-lg-3">
+                  <div class="thumb">
+                    <a href="<%= post.link %>" style="background-image: url('<%= post.feature %>')"></a>
+                  </div>
+                </div>
+                <% } else { %>
+                  <div class="card-content col-12">
+                    <div class="card-body">
+                      <div class="header">
+                        <a class="title" href="<%= post.link %>">
+                          <h3><%= post.title %></h3>
+                        </a>
+                      </div>
+                      <div class="inner">
+                        <div class="abstract">
+                          <%- post.abstract %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="item">
+                        <% post.tags.forEach(function(tag) { %>
+                        <a href="<%= tag.link %>" class="tag" data-title="<%= tag.name %>">
+                          <%= tag.name %>
+                        </a>
+                        <% }); %>
+                      </div>
+                      <div class="item"><%= post.dateFormat %></div>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            </article>
+            
+            <% }); %>
+          </div>
+
+          <% if (pagination.next) { %>
+          <div class="layout-paginator">
+            <div class="paginator">
+              <button href="<%= pagination.next %>" class="btn btn-paginator width-100">加载更多</button>
+            </div>
+          </div>
+          <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  //点击加载更多
+  jQuery(document).ready(function ($) {
+    //点击下一页的链接(即那个a标签)
+    $(' .btn-paginator').click(function () {
+      $this = $(this);
+      $this.addClass('loading').text('正在加载'); //给a标签加载一个loading的class属性，用来添加加载效果
+      var href = $this.attr('href'); //获取下一页的链接地址
+      if (href != undefined) { //如果地址存在
+        $.ajax({ //发起ajax请求
+          url: href,
+          //请求的地址就是下一页的链接
+          type: 'get',
+          //请求类型是get
+          error: function (request) {
+            //如果发生错误怎么处理
+          },
+          success: function (data) { //请求成功
+            $this.removeClass('loading').text('加载更多'); //移除loading属性
+            var $res = $(data).find('.card'); //从数据中挑出文章数据，请根据实际情况更改
+            $('.card-list').append($res.fadeIn(
+              500)); //将数据加载加进posts-loop的标签中。
+            var newhref = $(data).find('.btn-paginator').attr('href'); //找出新的下一页链接
+            if (newhref != undefined) {
+              $('.btn-paginator').attr('href', newhref);
+            } else {
+              $('.btn-paginator').remove(); //如果没有下一页了，隐藏
+            }
+          }
+        });
+      }
+      return false;
+    });
+  });
+</script>

@@ -1,0 +1,56 @@
+	<div class="layout-footer">
+
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									<% if (site.customConfig.copy) { %>
+									<span>© <%= site.customConfig.copy %> </span>
+									<a href="<%= themeConfig.domain %>" title="<%= themeConfig.siteName %>"><%= themeConfig.siteName %></a>
+									<span class="px-2">⋅</span>
+									<% } %>
+									<%- themeConfig.footerInfo %>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										<% if (site.customConfig.icp) { %>
+										<a href="http://www.beian.miit.gov.cn" target="_blank"><%= site.customConfig.icp %> </a>
+										<% } %>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									<% ['twitter', 'github', 'telegram','douban','instagram','qq','weibo','weixin'].forEach((item) => { %>
+									<% if (site.customConfig[item]) { %>
+									<span class="footer-links-item">
+										<a href="<%= site.customConfig[item] %>" target="_blank">
+											<i class="fa fa-<%= item %>" aria-hidden="true"></i>
+										</a>
+									</span>
+									<% } %>
+									<% }) %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src='<%= themeConfig.domain %>/media/scripts/main.js'></script>
+	<% if (site.customConfig.baidu) { %>
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?<%= site.customConfig.baidu %>";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<% } %>

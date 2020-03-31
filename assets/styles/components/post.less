@@ -1,0 +1,355 @@
+.layout-post {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.layout-post .layout-post-body {
+  position: relative;
+  margin: 0;
+  padding: 3rem 0;
+}
+
+.layout-post .layout-post-main {
+  overflow: visible;
+  line-height: 2;
+}
+
+.layout-post .layout-post-header {
+  margin: 0 0 1.6em;
+
+  h1 {
+    margin: 0;
+    color: @dark-black;
+    font-weight: 500;
+    font-variant: tabular-nums;
+    font-family: "PingFangSC-Medium","PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
+    line-height: 1.5;
+  }
+
+  .layout-post-meta {
+    position: relative;
+    margin: 0.5rem 0;
+    padding-bottom: 1.5rem;
+    font-size: 0;
+
+    @media (min-width: 768px) {
+      margin: 1.5rem 0;
+    }
+
+    .item {
+      position: relative;
+      display: inline-block;
+      margin-right: 1rem;
+      padding-right: 1rem;
+      color: @light-black;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:not(:last-child):after {
+        content: "•";
+        position: absolute;
+        right: -3px;
+        color: @light;
+      }
+
+      a {
+        color: @light-black;
+
+        &:hover {
+          color: @main;
+        }
+      }
+    }
+  }
+}
+
+.layout-post .layout-post-content {
+  overflow: visible;
+  margin: 0 0 24px;
+  padding: 0;
+  height: auto;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.layout-post .layout-post-content ul>li {
+  margin-left: 20px;
+  padding-left: 4px;
+  list-style-type: circle;
+}
+
+.layout-post .layout-post-content img {
+  display: flex;
+  margin: 1em auto;
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 4px;
+  background-color: @main-bg;
+  -webket-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.layout-post-content table {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
+  line-height: 1.7;
+  border-spacing: 0;
+  word-break: normal;
+}
+
+.layout-post-content table,
+.layout-post-content table tr,
+.layout-post-content table tr td,
+.layout-post-content table tr th {
+  border-color: @main-border;
+}
+
+.layout-post-content table th {
+  background-color: #FDFDFD;
+  font-weight: bold;
+}
+
+.layout-post-content tr th {
+  text-align: left;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.layout-post-content tr th,
+.layout-post-content tr td {
+  padding: 10px 20px;
+  border-right: 1px solid;
+  border-bottom: 1px solid @main-border;
+}
+
+.layout-post-content tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.layout-post-content tr th:last-child,
+.layout-post-content tr td:last-child {
+  border-right: 0;
+}
+
+.layout-post-content table tbody>tr:nth-child(odd)>td,
+.layout-post-content table tbody>tr:nth-child(odd)>th {
+  background-color: #F9F9F9;
+}
+
+.layout-post .layout-post-sidebar {
+  position: relative;
+  margin: 8px auto;
+  padding: 0;
+}
+
+.layout-post-sidebar .markdownIt-TOC {
+  margin: 0;
+  padding-left: 0 !important;
+  border-left: 1px solid @main-border;
+  list-style: none;
+
+  &.fixed-top {
+    position: fixed;
+    top: 24px;
+    max-width: 120px;
+  }
+}
+
+.layout-post-sidebar ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.layout-post-sidebar ul li a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 1rem;
+  color: @main-black;
+  white-space: nowrap;
+  line-height: 36px;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.layout-post-sidebar ul li a.current {
+  margin-left: -1px;
+  border-left: 1px solid @main;
+  background-color: @white;
+  color: @main;
+}
+
+.layout-post-social {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1.5rem 0 1rem;
+  border-bottom: 1px solid @light-border;
+
+  .item {
+    position: relative;
+    display: inline-block;
+    color: @light-black;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 1.5rem;
+    cursor: pointer;
+
+    &.reader {
+      flex: 1 1 auto;
+    }
+
+    &.liker {
+      color: @main;
+
+      &:hover {
+        color: @light;
+      }
+
+      i {
+        display: inline-block;
+        width: 14px;
+      }
+    }
+  }
+}
+
+.layout-post-navigation {
+  position: relative;
+  overflow: hidden;
+  margin: 3rem 0;
+
+  .post-card {
+    padding: 1rem 0;
+
+    &:not(:first-child) {
+      border-top: 1px solid @light-border;
+    }
+
+    .card-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      justify-content: center;
+
+      .card-body {
+        flex: 1 1 auto;
+
+        .header {
+          padding-top: 0.5rem;
+
+          .title {
+            display: block;
+
+            &:hover,
+            &:focus,
+            &:active {
+              h4 {
+                color: @main;
+              }
+            }
+
+            h4 {
+              overflow: hidden;
+              margin: 0;
+              color: @main-black;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .inner {
+          color: @light-black;
+
+          .abstract {
+            position: relative;
+
+            h2 {
+              display: none;
+            }
+
+            p {
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              margin: 0.5rem 0;
+            }
+
+            photo {
+              display: flex;
+              margin-left: -0.5rem;
+              margin-right: -0.5rem;
+
+              img {
+                flex: 0 0 auto;
+                padding: .5rem;
+                width: 25%;
+                height: 100%;
+                border-radius: .75rem;
+              }
+            }
+          }
+        }
+      }
+
+      .card-footer {
+        display: flex;
+
+        .item {
+          position: relative;
+          margin-right: 1rem;
+          padding-right: 1rem;
+          font-size: 12px;
+          color: @light-black;
+
+          &:not(:last-child):after {
+            content: "•";
+            position: absolute;
+            right: -3px;
+            color: @light;
+          }
+
+          a {
+            color: @light-black;
+
+            &:hover {
+              color: @main;
+            }
+          }
+        }
+      }
+    }
+
+    .card-thumb {
+      position: relative;
+
+      a {
+        display: block;
+        width: 100%;
+        padding-bottom: 64%;
+        border-radius: 4px;
+        background-position: center;
+        background-size: cover;
+        background-color: @light-bg;
+      }
+    }
+  }
+
+}

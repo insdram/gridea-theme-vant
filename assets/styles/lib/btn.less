@@ -1,0 +1,63 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+  height: 28px;
+  border: 1px solid @main-border;
+  border-radius: 4px;
+  background-color: @white;
+  background-image: none;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  color: @light-black;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-user-select: none;
+  -ms-touch-action: manipulation;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.btn,
+.btn:active,
+.btn:focus {
+  outline: 0;
+}
+
+.btn:focus,
+.btn:hover {
+  border-color: @light;
+  color: @light;
+}
+
+.btn.disabled,
+.btn[disabled] {
+  border-color: @main-border;
+  background-color: @main-bg;
+  box-shadow: none;
+  color: @lighter-black;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: @main;
+  background-color: @main;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+  color: @white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+  border-color: @light;
+  background-color: @light;
+  color: @white;
+}

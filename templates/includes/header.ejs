@@ -1,0 +1,52 @@
+<div class="layout-header">
+
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="<%= themeConfig.domain %>">
+								<img class="logo" src="<%= themeConfig.domain %>/media/images/site_avatar.png?v=<%= site.utils.now %>"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								<% menus.forEach(function (menu) { %>
+								<li class="layout-navigation-item"><a title="<%= menu.name %>"
+										href="<%= menu.link %>"><%= menu.name %></a>
+								</li>
+								<% }); %>
+							</ul>
+						</div>
+
+						<% if (site.customConfig.rss) { %>
+						<div class="item d-md-inline-block d-none">
+							<a class="btn" href="<%= site.customConfig.rss %>">
+								订 阅
+							</a>
+						</div>
+						<% } %>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,258 @@
+@import './lib/grid';
+@import './lib/varibles';
+@import './lib/btn';
+
+@font-face {
+  font-family: Chinese Quote;
+  src: local("PingFang SC"), local("SimSun");
+  unicode-range: U2018, U2019, U201c, U201d;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-overflow-style: scrollbar;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: @white;
+  color: @main-black;
+  font-variant: tabular-nums;
+  font-size: 14px;
+  font-family: "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
+  line-height: 1.5;
+}
+
+hr {
+  overflow: visible;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid @light-border;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: @dark-black;
+  font-weight: 500;
+  font-family: "PingFangSC-Medium","PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  -ms-transition: all .3s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.6em 0 0.6em;
+  cursor: default;
+}
+
+p {
+  margin: 1em 0;
+  cursor: default;
+}
+
+li {
+  list-style: none;
+  cursor: default;
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  cursor: default;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 0.5rem;
+  border-left: 4px solid @main-border;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+pre {
+  margin: 1.6em 0;
+  padding: 24px 18px;
+  border-radius: 4px;
+  background: @tag-bg;
+  white-space: pre-wrap;
+}
+
+code {
+  margin: 0 4px;
+  padding: 3px 8px 2px;
+  border: 1px solid @tag-border;
+  border-radius: 4px;
+  background-color: @tag-bg;
+  vertical-align: middle;
+  font-size: 12px;
+  font-family: Inconsolata, monospace, sans-serif;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 13px;
+}
+
+figure {
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+a {
+  outline: none;
+  background-color: transparent;
+  color: @main;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:focus {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+
+a:hover {
+  color: @light;
+}
+
+a:active {
+  color: @dark;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+
+a[disabled] {
+  color: @light-black;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+mark {
+  padding: 0.2em;
+  background-color: @light-bg;
+}
+
+::-moz-selection {
+  background: @main;
+  color: @white;
+}
+
+::selection {
+  background: @main;
+  color: @white;
+}
+
+.fa {
+  display: inline-block;
+  text-align: center;
+  text-transform: none;
+  font-style: normal;
+  line-height: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.layout {
+  display: flex;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: @white;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  flex-direction: column;
+  flex: auto;
+}
+
+
+@import './components/header';
+@import './components/menu';
+@import './components/banner';
+@import './components/navbar';
+@import './components/content';
+@import './components/card';
+@import './components/post';
+@import './components/valine';
+@import './components/footer';
