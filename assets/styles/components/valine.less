@@ -6,10 +6,14 @@
 .v * {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	color: #555;
+	color: rgb(73, 70, 70);
 	line-height: 2;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+.theme-dark .v * {
+	color: @main-white;
 }
 
 .v hr {
@@ -104,6 +108,10 @@
 	border: 1px solid @main-border;
 }
 
+.theme-dark .v .vwrap {
+	border: 1px solid @dark-border;
+}
+
 .v .vwrap input {
 	background: transparent;
 }
@@ -178,6 +186,11 @@
 
 .v .vwrap .vcontrol {
 	background-color: #f7f7f7;
+	font-size: 0;
+}
+
+.theme-dark .v .vwrap .vcontrol {
+	background-color: #292a2d;
 	font-size: 0;
 }
 
@@ -467,7 +480,7 @@
 .v .vlist .vcard .vh {
 	overflow: hidden;
 	padding-bottom: .5em;
-	border-bottom: 1px dashed @light-border;
+	border-bottom: 1px dashed @dark-border;
 }
 
 .v .vlist .vcard .vh .vtime {
@@ -526,10 +539,15 @@
 	left: 0;
 	display: block;
 	width: 100%;
-	background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),to(hsla(0,0%,100%,.9)));
 	background: linear-gradient(180deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.9));
 	content: "";
 	pointer-events: none;
+}
+
+.theme-dark {
+	.v .vlist .vcard .vcontent.expand:before {
+		background: linear-gradient(180deg, rgba(36, 37, 40,.1), rgba(36, 37, 40,.9));
+	}
 }
 
 .v .vlist .vcard .vcontent.expand:after {
@@ -547,10 +565,16 @@
 	pointer-events: none;
 }
 
+.theme-dark {
+	.v .vlist .vcard .vcontent.expand:after {
+		background: @dark-bg;
+	}
+}
+
 .v .vlist .vcard .vquote {
 	margin-top: 1em;
 	padding-left: 1em;
-	border-left: 1px dashed @light-border;
+	border-left: 1px dashed @dark-border;
 	color: #666;
 }
 

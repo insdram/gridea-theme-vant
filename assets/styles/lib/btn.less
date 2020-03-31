@@ -61,3 +61,48 @@
   background-color: @light;
   color: @white;
 }
+
+.theme-dark {
+  
+  .btn {
+    border: 1px solid @dark-border;
+    background-color: @dark-bg;
+    color: @light-white;
+  }
+
+  .btn,
+  .btn:active,
+  .btn:focus {
+    outline: 0;
+  }
+
+  .btn:focus,
+  .btn:hover {
+    border-color: @light;
+    color: @light;
+  }
+
+  .btn.disabled,
+  .btn[disabled] {
+    border-color: @main-border;
+    background-color: @main-bg;
+    box-shadow: none;
+    color: @lighter-black;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    border-color: @main;
+    background-color: @main;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+    color: @white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-primary:focus,
+  .btn-primary:hover {
+    border-color: @light;
+    background-color: @light;
+    color: @white;
+  }
+}

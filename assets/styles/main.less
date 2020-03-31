@@ -56,7 +56,7 @@ h5,
 h6 {
   color: @dark-black;
   font-weight: 500;
-  font-family: "PingFangSC-Medium","PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
+  font-family: "PingFangSC-Medium", "PingFangSC-Regular", "PingFang SC", "Microsoft YaHei", Arial, Helvetica, "WenQuanYi Micro Hei", "tohoma,sans-serif";
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
   -o-transition: all .3s linear;
@@ -72,6 +72,18 @@ h5,
 h6 {
   margin: 1.6em 0 0.6em;
   cursor: default;
+}
+
+.theme-dark {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @dark-white;
+  }
 }
 
 p {
@@ -104,6 +116,15 @@ blockquote {
   margin: 1.5rem 0;
   padding-left: 0.5rem;
   border-left: 4px solid @main-border;
+}
+
+.theme-dark {
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding-left: 0.5rem;
+    border-left: 4px solid @dark-border;
+  }
 }
 
 blockquote p {
@@ -244,7 +265,13 @@ mark {
   -ms-transition: all 0.3s ease-out;
   flex-direction: column;
   flex: auto;
+
+  &.theme-dark {
+    background: @dark-bg;
+    color: @light-white;
+  }
 }
+
 
 
 @import './components/header';

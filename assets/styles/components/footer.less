@@ -38,6 +38,41 @@
   }
 }
 
+.theme-dark {
+  .layout-footer {
+  
+    .footer {
+      border-top: 1px solid @dark-border;
+  
+      .footer-copy {
+        color: @light-white;
+  
+        a {
+          color: @light-white;
+  
+          &:hover {
+            color: @dark-white;
+          }
+        }
+      }
+  
+      .footer-links {
+  
+        span {
+  
+          a {
+            color: @light-white;
+  
+            &:hover {
+              color: @dark-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .layout-totop {
 	position: fixed;
 	right: 24px;
