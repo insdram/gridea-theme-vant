@@ -48,6 +48,12 @@ hr {
   border-top: 1px solid @light-border;
 }
 
+.theme-dark {
+  hr {
+    border-top: 1px solid @dark-border;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -155,6 +161,17 @@ pre code {
   padding: 0;
   border: none;
   font-size: 13px;
+}
+
+.theme-dark {
+  pre {
+    background: #292a2d;
+  }
+  
+  code {
+    border: 1px solid @dark-border;
+    background-color: #292a2d;
+  }
 }
 
 figure {

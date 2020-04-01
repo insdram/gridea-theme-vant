@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <div class="header-content">
+      <div class="title">搜索</div>
+    </div>
+  </div>
+  <div class="card-body">
+    <% posts.forEach(function(post) { %>
+    <div class="card-item">
+      <div class="thumb">
+        <% if (themeConfig.showFeatureImage && post.feature) { %>
+        <a href="<%= post.link %>" style="background-image: url('<%= post.feature %>')"></a>
+        <% } else {%>
+        <a href="<%= post.link %>"
+          style="background-image: url('<%= themeConfig.domain %>/images/avatar.png')"></a>
+        <% } %>
+      </div>
+      <div class="list-content">
+        <div class="list-body">
+          <a class="title" href="<%= post.link %>"><%= post.title %></a>
+          <div class="time"><%= post.dateFormat %></div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>

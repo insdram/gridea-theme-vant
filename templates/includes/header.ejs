@@ -9,7 +9,8 @@
 
 						<div class="logo">
 							<a href="<%= themeConfig.domain %>">
-								<img class="logo" src="<%= themeConfig.domain %>/media/images/site_avatar.png?v=<%= site.utils.now %>"
+								<img class="logo"
+									src="<%= themeConfig.domain %>/media/images/site_avatar.png?v=<%= site.utils.now %>"
 									alt="">
 							</a>
 						</div>
@@ -24,13 +25,28 @@
 							</ul>
 						</div>
 
-						<% if (site.customConfig.rss) { %>
 						<div class="item d-md-inline-block d-none">
-							<a class="btn" href="<%= site.customConfig.rss %>">
-								订 阅
-							</a>
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
 						</div>
-						<% } %>
+
+
+
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="<%=site.utils.now%>" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
 
 						<div class="nav d-md-none d-inline-block">
 							<div class="trigger">

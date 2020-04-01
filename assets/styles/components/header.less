@@ -91,6 +91,12 @@
 
       }
 
+      .item {
+        .search-icon {
+          font-size: 16px;
+        }
+      }
+
     }
   }
 }
@@ -98,7 +104,7 @@
 .theme-dark {
   .layout-header-main {
     background: transparent;
-    box-shadow: 0px 5px 60px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 5px 60px 0px @light-black;
 
     .container {
 
@@ -131,6 +137,75 @@
             }
           }
 
+        }
+
+        .search-lightbox {
+          position: fixed;
+          visibility: hidden;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-color: @main-black;
+          transition: all 0.2s ease-in-out;
+
+          &.animate {
+            visibility: visible;
+            .search-body {
+              .search-form {
+                -moz-opacity: 1;
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+          }
+
+          .search-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+
+            .search-form {
+              display: flex;
+              width: 20%;
+              padding: 8px;
+              border-radius: 4px;
+              background-color: #292a2d;
+              border: 1px solid @dark-border;
+              opacity: 0;
+              transition: all 0.2s ease-in-out;
+              transform: scale(0.8);
+
+              .search-field {
+                padding: 5px;
+                margin-right: 5px;
+                color: @light-white;
+                border: none;
+                background-color: transparent;
+                flex: 1 1;
+
+                &:focus,
+                &:active {
+                  outline: none;
+                }
+              }
+
+              .submit {
+                padding: 5px;
+                border: none;
+                font-size: 14px;
+                color: @light-white;
+                background-color: transparent;
+
+                &:focus,
+                &:active {
+                  outline: none;
+                }
+              }
+
+            }
+          }
         }
 
       }

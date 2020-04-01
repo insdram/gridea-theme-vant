@@ -2,16 +2,29 @@
 
   $(function () {
 
+    $('.layout-header').find('.search-icon').bind('click', function (event) {
+      event.stopPropagation();
+      $('.search-lightbox').addClass('animate');
+    });
+    
+    $(document).bind('click', function(e) {
+      var e = e || window.event; //浏览器兼容性 
+      var elem = e.target || e.srcElement;
+      while (elem) { //循环判断至跟节点，防止点击的是div子元素 
+        if (elem.id && elem.id == 'gridea-search-form') {
+          return;
+        }
+        elem = elem.parentNode;
+      }
+      $('.search-lightbox').removeClass('animate');
+    });
+
     $('.layout-header').find('.trigger').bind('click', function (event) {
       event.stopPropagation();
       $('.layout-collapse').toggleClass('open');
-
-    });
-    $('.layout-header-search>i').bind('click', function () {
-      $(this).siblings('#search_bar').find('input').toggleClass('layout-search-show');
     });
 
-    $(".layout-comments").find( 'textarea#veditor').focus(function(){
+    $(".layout-comments").find('textarea#veditor').focus(function () {
       $(this).siblings('div.vctrl').addClass("d-block");
       $(this).parent().siblings('div.vcontrol').addClass("d-block");
     })
