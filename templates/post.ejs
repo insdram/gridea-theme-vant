@@ -361,9 +361,7 @@
   }
 
   let pres = document.querySelectorAll('pre');
-  console.log("pres", pres)
   pres.forEach(pre => {
-    console.log("pre", pre)
     let code = pre.querySelector('code');
     let copyElem = document.createElement('span');
     copyElem.classList.add('copy-code');
